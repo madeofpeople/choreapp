@@ -1,0 +1,64 @@
+<head>
+  <title>choreapp</title>
+</head>
+
+<body>
+
+  <h2>Member List</h2>
+  {{> member_list}}
+
+  <h2>Activity List</h2>
+  {{> activity_list}}
+
+  {{> footer}}
+</body>
+
+<template name="member_list">
+  <ul id="member_list">
+  {{#each members}}
+    {{> member}}
+  {{/each}}
+  </ul>
+</template>
+
+<template name="activity_list">
+  <ul id="activity_list">
+  {{#each activities}}
+    {{> activity}}
+  {{/each}}
+  </ul>
+</template>
+
+<template name="member">
+  <li id="member_{{_id}}">
+    <a href="mailto:{{email}}">{{name}}</a>
+    <a class="remove"><span>Remove Member</span></a>
+    <div class="activity">{{activity}}</div>
+  </li>
+</template>
+
+<template name="activity">
+  <li id="activity_{{_id}}">
+    {{name}}
+    <a class="remove"><span>Remove Activity</span></a>
+  </li>
+</template>
+
+<template name="addMemberForm">
+  <input id="member-name" type="text" placeholder="Name">
+  <input id="member-email" type="text" placeholder="Email">
+  <input type="submit" id="add-member" value="Submit">
+</template>
+
+<template name="addActivityForm">
+  <input id="activity-name" type="text" placeholder="Acivity Name">
+  <input type="submit" id="add-activity" value="Submit">
+</template>
+
+<template name="footer">
+  <footer>
+    {{> addMemberForm}}
+    {{> addActivityForm}}
+    <button>Randomize Activities</button>
+  </footer>
+</template>

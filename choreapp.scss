@@ -1,0 +1,46 @@
+/* CSS declarations go here */
+
+$color: #0af;
+
+%sr-only {
+  position: absolute;
+  top: -2000px;
+  left: -2000px;
+  width:1px;
+  height: 1px;
+  overflow: hidden;
+  *>& {
+    position: relative;
+  }
+
+}
+
+body {
+  color: $color;
+  font-size: 1.5em;
+  line-height: 1.2;
+}
+
+#member_list {
+  width: 80%;
+  list-style: none;
+  margin: 0 auto;
+  li {
+    width: auto;
+  }
+}
+
+a.remove {
+  // span {
+  //   @extend %sr-only;
+  // }
+  // ::before {
+  //   content: "X";
+  //   background-color: #f00;
+  //   width: 24px;
+  //   height: 24px
+  // }
+  cursor: pointer;
+  display: block;
+  float: right;
+}
